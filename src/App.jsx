@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Home from './components/Home/Home';
+import Pokedex from './components/Pokedex/Pokedex';
+import PokemonDetails from './components/PokemonDetails/PokemonDetails';
+import Config from './components/Config/Config';
+import NotFound from './components/NotFound/NotFound';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const darkMode = useSelector((state) => state.config.darkMode);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+        <header>Pokédex App</header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pokedex" element={<ProtectedRoute><Pokedex /></ProtectedRoute>} />
+          <Route path="/pokedex/:id" element={<ProtectedRoute><PokemonDetails /></ProtectedRoute>} />
+          <Route path="/config" element={<ProtectedRoute><Config /></ProtectedRoute>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <footer>Made with by Manuel Vega</footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;

@@ -1,0 +1,54 @@
+pokedex-react-router-redux/
+  ├── node_modules/
+  ├── public/
+  │   ├── trainer.png
+  │   └── vite.svg
+  ├── src/
+  │   ├── assets/
+  │   │   └── react.svg
+  │   ├── components/
+  │   │   ├── Home/
+  │   │   │   ├── Home.jsx
+  │   │   │   └── Home.module.css
+  │   │   ├── NotFound/
+  │   │   │   ├── NotFound.jsx
+  │   │   │   └── NotFound.module.css
+  │   │   ├── PokemonCard/
+  │   │   │   ├── PokemonCard.jsx
+  │   │   │   └── PokemonCard.module.css
+  │   │   ├── PokemonDetails/
+  │   │   │   ├── PokemonDetails.jsx
+  │   │   │   └── PokemonDetails.module.css
+  │   │   ├── Pokedex/
+  │   │   │   ├── Pokedex.jsx
+  │   │   │   └── Pokedex.module.css
+  │   │   ├── ProtectedRoute/
+  │   │   │   └── ProtectedRoute.jsx
+  │   │   ├── Config/
+  │   │   │   ├── Config.jsx
+  │   │   │   └── Config.module.css
+  │   │   ├── Navbar/               
+  │   │   │   ├── Navbar.jsx
+  │   │   │   └── Navbar.module.css
+  │   ├── store/
+  │   │   ├── slices/
+  │   │   │   ├── actions/
+  │   │   │   │   ├── actionTypes.js
+  │   │   │   │   ├── pokemonActions.js
+  │   │   │   │   ├── userActions.js
+  │   │   │   │   └── configActions.js
+  │   │   │   ├── reducers/
+  │   │   │   │   ├── pokemonReducer.js
+  │   │   │   │   ├── userReducer.js
+  │   │   │   │   ├── rootReducer.js
+  │   │   │   │   └── configReducer.js
+  │   │   └── index.jsx
+  │   ├── App.css
+  │   ├── App.jsx
+  │   ├── index.css
+  │   └── main.jsx
+  ├── .gitignore
+  ├── index.html
+  ├── package-lock.json
+  ├── package.json
+  └── vite.config.js
